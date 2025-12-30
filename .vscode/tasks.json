@@ -1,0 +1,135 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        // =================================================================
+        // 1. RELEVAMIENTO (releva)
+        // =================================================================
+        {
+            "label": "🔴 WIN PPT: Relevamiento",
+            "detail": "Ejecuta lanza.py (releva)",
+            "dependsOn": ["_internal_exec_releva"],
+            "group": { "kind": "build", "isDefault": false }
+        },
+        {
+            "label": "_internal_exec_releva",
+            "type": "shell",
+            "options": { "cwd": "/mnt/c/" },
+            // Comando: Reintroducimos el ECHO y PAUSE final para retener el log.
+            "command": "clear; cmd.exe /c \"cls && echo ============================== && echo 🔴 TAREA: Relevamiento && echo ============================== && Q: && cd $RUTA_WIN_ACTUAL && C:\\\\GitHub\\\\GestorPPT\\\\venv\\\\Scripts\\\\python.exe lanza.py releva && echo. && echo -------------------------------------------------- && echo [PRESIONE UNA TECLA PARA CERRAR EL LOG] && pause\"",
+            "presentation": { 
+                "echo": false, 
+                "reveal": "always", 
+                "focus": true, 
+                "panel": "dedicated", 
+                "clear": true, 
+                "showReuseMessage": false,
+                "close": true // Kill automático, se ejecuta después de que el PAUSE se resuelve.
+            },
+            "problemMatcher": []
+        },
+
+        // =================================================================
+        // 2. CARGA COMPLETA (carga-completa)
+        // =================================================================
+        {
+            "label": "🔴 WIN PPT: Actualiza PPT",
+            "detail": "Ejecuta lanza.py (carga-completa)",
+            "dependsOn": ["_internal_exec_carga"],
+            "group": { "kind": "build", "isDefault": false }
+        },
+        {
+            "label": "_internal_exec_carga",
+            "type": "shell",
+            "options": { "cwd": "/mnt/c/" },
+            "command": "clear; cmd.exe /c \"cls && echo ============================== && echo 🔴 TAREA: Actualiza PPT && echo ============================== && Q: && cd $RUTA_WIN_ACTUAL && C:\\\\GitHub\\\\GestorPPT\\\\venv\\\\Scripts\\\\python.exe lanza.py carga-completa && echo. && echo -------------------------------------------------- && echo [PRESIONE UNA TECLA PARA CERRAR EL LOG] && pause\"",
+            "presentation": { 
+                "echo": false, 
+                "reveal": "always", 
+                "focus": true, 
+                "panel": "dedicated", 
+                "clear": true, 
+                "showReuseMessage": false,
+                "close": true
+            },
+            "problemMatcher": []
+        },
+
+        // =================================================================
+        // 3. AUDITORIA (audita)
+        // =================================================================
+        {
+            "label": "🔴 WIN PPT: Audita PPT",
+            "detail": "Ejecuta lanza.py (audita)",
+            "dependsOn": ["_internal_exec_audita"],
+            "group": { "kind": "build", "isDefault": false }
+        },
+        {
+            "label": "_internal_exec_audita",
+            "type": "shell",
+            "options": { "cwd": "/mnt/c/" },
+            "command": "clear; cmd.exe /c \"cls && echo ============================== && echo 🔴 TAREA: Auditoria PPT && echo ============================== && Q: && cd $RUTA_WIN_ACTUAL && C:\\\\GitHub\\\\GestorPPT\\\\venv\\\\Scripts\\\\python.exe lanza.py audita && echo. && echo -------------------------------------------------- && echo [PRESIONE UNA TECLA PARA CERRAR EL LOG] && pause\"",
+            "presentation": { 
+                "echo": false, 
+                "reveal": "always", 
+                "focus": true, 
+                "panel": "dedicated", 
+                "clear": true, 
+                "showReuseMessage": false,
+                "close": true
+            },
+            "problemMatcher": []
+        },
+
+        // =================================================================
+        // 4. MATCH NOMBRES (match-nombres)
+        // =================================================================
+        {
+            "label": "🔴 WIN PPT: Match compara nombres",
+            "detail": "Ejecuta lanza.py (match-nombres)",
+            "dependsOn": ["_internal_exec_match_nombres"],
+            "group": { "kind": "build", "isDefault": false }
+        },
+        {
+            "label": "_internal_exec_match_nombres",
+            "type": "shell",
+            "options": { "cwd": "/mnt/c/" },
+            "command": "clear; cmd.exe /c \"cls && echo ============================== && echo 🔴 TAREA: Match Nombres && echo ============================== && Q: && cd $RUTA_WIN_ACTUAL && C:\\\\GitHub\\\\GestorPPT\\\\venv\\\\Scripts\\\\python.exe lanza.py match-nombres && echo. && echo -------------------------------------------------- && echo [PRESIONE UNA TECLA PARA CERRAR EL LOG] && pause\"",
+            "presentation": { 
+                "echo": false, 
+                "reveal": "always", 
+                "focus": true, 
+                "panel": "dedicated", 
+                "clear": true, 
+                "showReuseMessage": false,
+                "close": true
+            },
+            "problemMatcher": []
+        },
+
+        // =================================================================
+        // 5. MATCH LOGS (match)
+        // =================================================================
+        {
+            "label": "🔴 WIN PPT: Match Comparar Logs",
+            "detail": "Ejecuta lanza.py (match)",
+            "dependsOn": ["_internal_exec_match_logs"],
+            "group": { "kind": "build", "isDefault": false }
+        },
+        {
+            "label": "_internal_exec_match_logs",
+            "type": "shell",
+            "options": { "cwd": "/mnt/c/" },
+            "command": "clear; cmd.exe /c \"cls && echo ============================== && echo 🔴 TAREA: Match Logs && echo ============================== && Q: && cd $RUTA_WIN_ACTUAL && C:\\\\GitHub\\\\GestorPPT\\\\venv\\\\Scripts\\\\python.exe lanza.py match && echo. && echo -------------------------------------------------- && echo [PRESIONE UNA TECLA PARA CERRAR EL LOG] && pause\"",
+            "presentation": { 
+                "echo": false, 
+                "reveal": "always", 
+                "focus": true, 
+                "panel": "dedicated", 
+                "clear": true, 
+                "showReuseMessage": false,
+                "close": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}

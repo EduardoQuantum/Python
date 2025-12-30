@@ -1,0 +1,21 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Curso Python y Pandas"
+  navbar:
+    background: "#003366" # Tu color azul
+    left:
+      - href: index.qmd
+        text: Inicio
+      - href: clase_01.qmd
+        text: Clase 1
+      - href: clase_02.qmd
+        text: Clase 2
+      # Agrega aquí las futuras clases
+
+format:
+  html:
+    theme: flatly
+    toc: true

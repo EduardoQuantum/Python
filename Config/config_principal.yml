@@ -1,0 +1,12 @@
+# Define los archivos de entrada y salida para este pipeline
+io:
+  input_directory: "data/output"
+  input_filename: "PreProcesamiento.xlsx"  # <--- CAMBIA ESTO
+  output_directory: "data/output"
+  output_filename: "TablasProcesadasXLS.xlsx" # <--- CAMBIA ESTO
+  sheets_to_omit:
+    - "Indice"
+
+# --- NUEVA SECCIÓN OPCIONAL ---
+opciones_exportacion:
+  formato_numerico: '0' # Formato de número de Excel para 0 decimales 2 decimales "0.00"

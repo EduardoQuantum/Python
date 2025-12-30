@@ -1,0 +1,27 @@
+--- REPORTE DE AUDITORÍA (SOLO ERRORES) ---
+Archivo PPT: Template_Quesos_DIC25.pptx
+Raíz Proyecto: \\wsl.localhost\Ubuntu-24.04\home\lencina\proyectos\QuesoDIC25
+---------------------------------------------------
+
+| NombreObjeto   |   Sl. | Charts (PPT)   | OrdenTablas   | JSON   | Estado                 |
+|:---------------|------:|:---------------|:--------------|:-------|:-----------------------|
+| __fun_01       |     6 | --             | __fun_01      | --     | FALTA (en OrdenTablas) |
+| __fun_02       |     6 | --             | __fun_02      | --     | FALTA (en OrdenTablas) |
+| __fun_03       |     6 | --             | __fun_03      | --     | FALTA (en OrdenTablas) |
+| __fun_04       |     6 | --             | __fun_04      | --     | FALTA (en OrdenTablas) |
+| __fun_05       |     6 | --             | __fun_05      | --     | FALTA (en OrdenTablas) |
+| __fun_06       |     6 | --             | __fun_06      | --     | FALTA (en OrdenTablas) |
+| __fun_07       |     6 | --             | __fun_07      | --     | FALTA (en OrdenTablas) |
+| __fun_08       |     7 | --             | __fun_08      | --     | FALTA (en OrdenTablas) |
+| __fun_09       |     7 | --             | __fun_09      | --     | FALTA (en OrdenTablas) |
+| __fun_10       |     7 | --             | __fun_10      | --     | FALTA (en OrdenTablas) |
+| __fun_11       |     7 | --             | __fun_11      | --     | FALTA (en OrdenTablas) |
+| __fun_12       |     7 | --             | __fun_12      | --     | FALTA (en OrdenTablas) |
+| __fun_13       |     7 | --             | __fun_13      | --     | FALTA (en OrdenTablas) |
+| __fun_14       |     7 | --             | __fun_14      | --     | FALTA (en OrdenTablas) |
+| __fun_15       |     8 | --             | __fun_15      | --     | FALTA (en OrdenTablas) |
+| __fun_16       |     8 | --             | __fun_16      | --     | FALTA (en OrdenTablas) |
+| __fun_17       |     8 | --             | __fun_17      | --     | FALTA (en OrdenTablas) |
+| __fun_18       |     8 | --             | __fun_18      | --     | FALTA (en OrdenTablas) |
+| __fun_19       |     8 | --             | __fun_19      | --     | FALTA (en OrdenTablas) |
+| __fun_20       |     8 | --             | __fun_20      | --     | FALTA (en OrdenTablas) |

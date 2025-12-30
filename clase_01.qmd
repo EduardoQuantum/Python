@@ -1,0 +1,102 @@
+---
+title: Python para no programadores FLACSO Argentina - CEIA
+subtitle: "Clase 01: Distribuciones de Frecuencia"
+author: "XX"
+date: last-modified
+lang: es
+format:
+  html:
+    theme: flatly
+    toc: true
+    code-fold: show
+    code-tools: true
+---
+
+```{=html}
+<style>
+  h1, h2, h3, h4 { color: #003366 !important; }
+  a { color: #003366; }
+  .callout-header { background-color: #003366 !important; color: white !important; }
+</style>
+```
+
+::: {.callout-note icon="false"}
+## 🎯 Objetivos de la Clase
+1.  Crear un conjunto de datos (DataFrame) desde cero.
+2.  Calcular frecuencias con `value_counts()`.
+3.  Generar gráficos de barras básicos.
+:::
+
+## 1. El Escenario: Datos "Muleto"
+
+Vamos a simular una encuesta rápida sobre una **Nueva Ley de Educación**.
+
+```{python}
+#| label: cargar-datos
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Diccionario de datos
+datos = {
+    'edad': [23, 45, 31, 22, 56, 41, 33, 29, 60, 19],
+    'nivel': ['Secundario', 'Universitario', 'Universitario', 'Posgrado', 
+              'Secundario', 'Universitario', 'Secundario', 'Universitario', 
+              'Primario', 'Secundario']
+}
+
+df = pd.DataFrame(datos)
+df.head()
+```
+
+---
+
+## 2. Análisis de Frecuencias
+
+¿Cuántos encuestados hay por cada nivel educativo?
+
+::: {.panel-tabset}
+
+## 🐍 Código y Cálculo
+
+Usamos la función `value_counts()` que cuenta valores únicos.
+
+```{python}
+#| label: calculo-frecuencia
+
+frecuencia = df['nivel'].value_counts()
+print(frecuencia)
+```
+
+## 📊 Gráfico
+
+Aquí visualizamos la tabla anterior. Observa cómo usamos `kind='bar'`.
+
+```{python}
+#| label: grafico-barras
+
+# Crear el gráfico
+# color='#003366' es el código Hex del Azul que elegimos
+frecuencia.plot(kind='bar', color='#003366', figsize=(8, 5))
+
+plt.title("Distribución por Nivel Educativo")
+plt.ylabel("Cantidad de Personas")
+plt.xticks(rotation=0) # Para que las etiquetas se lean horizontalmente
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.show()
+```
+
+## 📝 Interpretación
+
+**Lo que nos dicen los datos:**
+Observamos que el nivel **Universitario** y **Secundario** tienen la misma prevalencia en nuestra muestra (4 casos cada uno), mientras que Posgrado y Primario son minoritarios.
+
+:::
+
+---
+
+## 3. Cierre
+
+::: {.callout-tip}
+## 💡 Tip para el alumno
+Cuando uses `value_counts()`, prueba agregar el parámetro `normalize=True` para ver porcentajes en lugar de números absolutos. ¡Inténtalo en tu consola!
+:::

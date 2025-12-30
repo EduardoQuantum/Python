@@ -1,0 +1,16 @@
+---
+title: "Curso Universitario de Python y Pandas"
+subtitle: "Proyecto Muleto"
+author: "Eduardo Lencina"
+lang: es
+format:
+  html:
+    theme: flatly
+    toc: false
+---
+
+```{=html}
+<style>
+  h1, h2, h3 { color: #003366 !important; }
+  .callout-header { background-color: #003366 !important; color: white !important; }
+</style>

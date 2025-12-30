@@ -1,0 +1,4 @@
+Log de Carga_Completa - 2025-12-11 12:55:38.813409
+Archivo Original: Template_Quesos_DIC25.pptx
+============================================================
+[WARNING] Falta imagen solicitada por config: Marcaspro.jpg

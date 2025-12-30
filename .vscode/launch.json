@@ -1,0 +1,190 @@
+{
+    "version": "0.2.0",
+    "inputs": [
+        // Mantenemos los inputs
+        {
+            "id": "pptFileName",
+            "type": "promptString",
+            "description": "Ingresa el nombre del archivo PPT (ej: MiReporte.pptx)",
+            "default": "DirecTV_Reporte_Small.pptx"
+        },
+        {
+            "id": "pptxFile",
+            "type": "promptString",
+            "description": "Nombre del archivo PPTX (ej: ArchivoPPT.pptx)",
+            "default": "ArchivoPPT.pptx"
+        },
+        {
+            "id": "excelFileEdita",
+            "type": "promptString",
+            "description": "Excel de Edición Avanzada (para EditaObjetosPPT.py)",
+            "default": "EditaObjetos.xlsx"
+        },
+        {
+            "id": "excelFile",
+            "type": "promptString",
+            "description": "Nombre del archivo Excel (ej: ArchivoXLS.xlsx)",
+            "default": "ArchivoXLS.xlsx"
+        },
+        {
+            "id": "masterFile",
+            "type": "promptString",
+            "description": "Nombre del archivo 'Ola anterior' a comparar con PreProcesamiento.xlsx",
+            "default": "Ola1_PreProcesamiento.xlsx"
+        },
+        {
+            "id": "excelFileRename",
+            "type": "promptString",
+            "description": "Archivo Excel para renombrar PPT",
+            "default": "simple__Nombres.xlsx"
+        },
+        {
+            "id": "harmoniExcelFile",
+            "type": "promptString",
+            "description": "Nombre del archivo Excel de entrada para Harmoni (debe estar en la carpeta TidyHarmoni)",
+            "default": "TablasParaHarmoni.xlsx"
+        },
+        {
+            "id": "dimensionExcelFile",
+            "type": "promptString",
+            "description": "Nombre del archivo Excel de entrada para Dimension (debe estar en la carpeta Dimension)",
+            "default": "TablasParaDimension.xlsx"
+        },
+        {
+            "id": "incluirImagenes",
+            "type": "pickString",
+            "description": "¿Incluir reemplazo de imágenes en esta ejecución?",
+            "options": [ "no", "si" ],
+            "default": "no"
+        },
+        // --- Inputs para la Tarea 1: Carga Completa ---
+        {
+            "id": "cargaPPTName",
+            "type": "promptString",
+            "description": "Carga Completa: Nombre del archivo PPT (ej. master.pptx):",
+            "default": "data_ejemplo.pptx" // Valor por defecto para solo presionar Enter
+        },
+        {
+            "id": "cargaDiapositivas",
+            "type": "promptString",
+            "description": "Carga Completa: Diapositivas (ej. --diapositivas 45-47 o ' ' para todas):",
+            "default": "" // Dejamos vacío para indicar que el argumento es opcional
+        },
+        {
+            "id": "cargaImagenes",
+            "type": "promptString",
+            "description": "Carga Completa: ¿Incluir Imágenes? (ej. --imagenes o ' '):",
+            "default": "" 
+        },
+
+        // --- Inputs para la Tarea 2: Audita (Mantenemos estos ejemplos por si los necesitas) ---
+        {
+            "id": "auditaPPTName",
+            "type": "promptString",
+            "description": "Audita: Nombre del archivo PPT:",
+            "default": "audit_ejemplo.pptx"
+        },
+        {
+            "id": "auditaDiapositivas",
+            "type": "promptString",
+            "description": "Audita: Diapositivas (ej. --diapositivas 45-47 o ' ' para todas):",
+            "default": ""
+        },
+        {
+            "id": "invisible",
+            "type": "promptString",
+            "description": "Audita: ¿Invisible? (ej. --invisible o ' '):",
+            "default": ""
+        }
+
+    ],
+    "configurations": [
+        // --- 1. LANZADORES PRINCIPALES (AHORA USAN EL ORQUESTADOR PYTHON run_linux.py) ---
+        {
+            "name": "🟢 LINUX:TXT-PROCESAMIENTO",
+            "type": "debugpy", 
+            "request": "launch",
+            "program": "${workspaceFolder}/etc/run_linux.py", 
+            "args": [
+                "-s", "matriz_", 
+                "-f", "txt"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "🟢 LINUX:XLS-PROCESAMIENTO",
+            "type": "debugpy", 
+            "request": "launch",
+            "program": "${workspaceFolder}/etc/run_linux.py",
+            "args": [
+                "-s", "matriz_", 
+                "-f", "xls"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        },
+        // --- 2. LANZADORES PYTHON DE UTILIDAD (Hash, etc.) ---
+        {
+            "name": "🟢 LINUX:Reporte Hash-PROCESAMIENTO",
+            "type": "debugpy", 
+            "request": "launch",
+            "program": "/home/lencina/proyectos/UbuntuXLS/utilidades/ReporteHash.py", 
+            "args": [
+                "${workspaceFolder}/data/output/PreProcesamiento.xlsx"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "🟢 LINUX:Compara Hash -PROCESAMIENTO",
+            "type": "debugpy", 
+            "request": "launch",
+            "program": "/home/lencina/proyectos/UbuntuXLS/utilidades/ComparaHash.py", 
+            "args": [
+                "${workspaceFolder}/data/output/${input:masterFile}",
+                "${workspaceFolder}/data/output/PreProcesamiento.xlsx"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        },
+        // Pega estos dos bloques al final del array "configurations" en tu launch.json:
+
+        // ===========================================
+        // 7. UTILIDAD: TIDY Harmoni (Lanzador Linux)
+        // Corregido: 'harmoni' es ahora un argumento POSICIONAL (sin guion)
+        // ===========================================
+        {
+            "name": "🟢 LINUX:TIDY Harmoni -UTILIDAD",
+            "type": "debugpy", 
+            "request": "launch",
+            "program": "${workspaceFolder}/etc/lanzador_tidy.py", 
+            "args": [
+                "harmoni", // << ¡CORREGIDO! Argumento 1: Modo sin guion
+                "${input:harmoniExcelFile}" // Argumento 2: Nombre del archivo de entrada
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        },
+        // ===========================================
+        // 8. UTILIDAD: TIDY Dimension (Lanzador Linux)
+        // Corregido: 'dimension' es ahora un argumento POSICIONAL (sin guion)
+        // ===========================================
+        {
+            "name": "🟢 LINUX:TIDY Dimension -UTILIDAD - ",
+            "type": "debugpy", 
+            "request": "launch",
+            "program": "${workspaceFolder}/etc/lanzador_tidy.py", 
+            "args": [
+                "dimension", // << ¡CORREGIDO! Argumento 1: Modo sin guion
+                "${input:dimensionExcelFile}" // Argumento 2: Nombre del archivo de entrada
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        }
+        // --------------------------------------------------
+        // --- TAREAS MUNDO WINDOWS (ROJO) ---
+        // --------------------------------------------------
+        // fin windows
+    ]
+}

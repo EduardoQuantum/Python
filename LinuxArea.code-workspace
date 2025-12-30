@@ -1,0 +1,76 @@
+{
+    "folders": [
+        {
+            "name": "📍 Muleto",
+            "path": "/home/lencina/proyectos/Muleto"
+        },
+        {
+            "name": "📍 UbuntuXLS",
+            "path": "../UbuntuXLS/src/gestorppt"
+        },
+        {
+            "name": "📍 UTILIDADES (UbuntuXLS)",
+            "path": "../UbuntuXLS/utilidades"
+        }
+    ],
+    "settings": {
+        // =================================================================
+        // 1. ZONA DE ACTIVACIÓN DE ENTORNOS (CORREGIDO)
+        // =================================================================
+        
+        // CAMBIO CLAVE: Esto debe ser 'true' para que se active solo.
+        "python.terminal.activateEnvironment": true,
+
+        // Ruta al intérprete de tu entorno virtual compartido
+        "python.defaultInterpreterPath": "/home/lencina/proyectos/UbuntuXLS/venv/bin/python3",
+
+        // =================================================================
+        // 2. TUS VARIABLES DE ENTORNO PERSONALIZADAS
+        // =================================================================
+        "terminal.integrated.env.linux": {
+            "RUTA_WIN_ACTUAL": "Q:\\home\\lencina\\proyectos\\Muleto"
+        },
+
+        // =================================================================
+        // 3. MAQUINARIA (NO TOCAR)
+        // =================================================================
+        "files.exclude": {
+            "**/.git": true,
+            "**/.svn": true,
+            "**/.hg": true,
+            "**/CVS": true,
+            "**/.DS_Store": true,
+            "**/__pycache__": true,
+            "**/*.pyc": true,
+            "**/venv": true
+        },
+        "terminal.integrated.profiles.linux": {
+            "bash": {
+                "path": "bash",
+                "icon": "terminal-linux",
+                "isDefault": true
+            },
+            
+            // EL PERFIL INFILTRADO QUE LEE LA VARIABLE DE ARRIBA
+            "💻 CMD (Mundo Q:)": {
+                "path": "bash",
+                "args": [
+                    "-c", 
+                    "cmd.exe /k \"Q: && cd $RUTA_WIN_ACTUAL && cls\""
+                ],
+                "icon": "terminal-cmd"
+            }
+        },
+        
+        "terminal.integrated.defaultProfile.linux": "bash",
+        
+        "workbench.colorCustomizations": {
+            "titleBar.activeBackground": "#2E7D32",
+            "titleBar.activeForeground": "#ffffff",
+            "titleBar.inactiveBackground": "#2E7D3299",
+            "statusBar.background": "#2E7D32",
+            "statusBar.foreground": "#ffffff",
+            "terminal.background": "#0d1b0e" 
+        }
+    }
+}
