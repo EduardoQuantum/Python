@@ -2,20 +2,33 @@ project:
   type: website
   output-dir: docs
 
+# Agregamos esto para no re-ejecutar todo siempre
+execute:
+  freeze: auto 
+
 website:
   title: "Curso Python y Pandas"
   navbar:
-    background: "#003366" # Tu color azul
+    background: "#003366"
     left:
       - href: index.qmd
         text: Inicio
-      - href: clase_01.qmd
-        text: Clase 1
-      - href: clase_02.qmd
-        text: Clase 2
-      # Agrega aquí las futuras clases
-
-format:
-  html:
-    theme: flatly
-    toc: true
+      - href: https://github.com/EduardoQuantum/Python
+        text: GitHub
+        icon: github
+        
+  # AQUÍ ESTÁ EL CAMBIO: Usamos barra lateral
+  sidebar:
+    style: "docked" # O "floating"
+    background: light # Fondo grisecito suave
+    contents:
+      - section: "Módulo 1: Fundamentos"
+        contents:
+          - text: "Introducción"
+            file: clase_01.qmd
+          - text: "Discretización"
+            file: clase_02.qmd
+      - section: "Módulo 2: Práctica"
+        contents:
+          - text: "Práctico Integrador"
+            file: practico_03.ipynb

@@ -12,6 +12,7 @@ format:
     code-tools: true
 ---
 
+````{=html}
 ```{=html}
 <style>
   h1, h2, h3, h4 { color: #003366 !important; }
@@ -19,9 +20,11 @@ format:
   .callout-header { background-color: #003366 !important; color: white !important; }
 </style>
 ```
+````
 
 ::: {.callout-note icon="false"}
 ## 🎯 Objetivos de la Clase
+
 1.  Crear un conjunto de datos (DataFrame) desde cero.
 2.  Calcular frecuencias con `value_counts()`.
 3.  Generar gráficos de barras básicos.
@@ -48,14 +51,13 @@ df = pd.DataFrame(datos)
 df.head()
 ```
 
----
+------------------------------------------------------------------------
 
 ## 2. Análisis de Frecuencias
 
 ¿Cuántos encuestados hay por cada nivel educativo?
 
-::: {.panel-tabset}
-
+::: panel-tabset
 ## 🐍 Código y Cálculo
 
 Usamos la función `value_counts()` que cuenta valores únicos.
@@ -64,7 +66,8 @@ Usamos la función `value_counts()` que cuenta valores únicos.
 #| label: calculo-frecuencia
 
 frecuencia = df['nivel'].value_counts()
-print(frecuencia)
+frecuencia
+# Nota: Al quitar el print(), VS Code renderizará una tabla estilizada
 ```
 
 ## 📊 Gráfico
@@ -87,16 +90,15 @@ plt.show()
 
 ## 📝 Interpretación
 
-**Lo que nos dicen los datos:**
-Observamos que el nivel **Universitario** y **Secundario** tienen la misma prevalencia en nuestra muestra (4 casos cada uno), mientras que Posgrado y Primario son minoritarios.
-
+**Lo que nos dicen los datos:** Observamos que el nivel **Universitario** y **Secundario** tienen la misma prevalencia en nuestra muestra (4 casos cada uno), mientras que Posgrado y Primario son minoritarios.
 :::
 
----
+------------------------------------------------------------------------
 
 ## 3. Cierre
 
-::: {.callout-tip}
+::: callout-tip
 ## 💡 Tip para el alumno
+
 Cuando uses `value_counts()`, prueba agregar el parámetro `normalize=True` para ver porcentajes en lugar de números absolutos. ¡Inténtalo en tu consola!
 :::

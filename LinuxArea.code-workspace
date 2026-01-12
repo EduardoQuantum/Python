@@ -1,17 +1,9 @@
 {
     "folders": [
         {
-            "name": "📍 Muleto",
-            "path": "/home/lencina/proyectos/Muleto"
+            "name": "📍 ClasesFlacso",
+            "path": "/home/lencina/proyectos/ClasesFlacso"
         },
-        {
-            "name": "📍 UbuntuXLS",
-            "path": "../UbuntuXLS/src/gestorppt"
-        },
-        {
-            "name": "📍 UTILIDADES (UbuntuXLS)",
-            "path": "../UbuntuXLS/utilidades"
-        }
     ],
     "settings": {
         // =================================================================
@@ -22,14 +14,7 @@
         "python.terminal.activateEnvironment": true,
 
         // Ruta al intérprete de tu entorno virtual compartido
-        "python.defaultInterpreterPath": "/home/lencina/proyectos/UbuntuXLS/venv/bin/python3",
-
-        // =================================================================
-        // 2. TUS VARIABLES DE ENTORNO PERSONALIZADAS
-        // =================================================================
-        "terminal.integrated.env.linux": {
-            "RUTA_WIN_ACTUAL": "Q:\\home\\lencina\\proyectos\\Muleto"
-        },
+        "python.defaultInterpreterPath": "/home/lencina/proyectos/ClasesFlacso/venv/bin/",
 
         // =================================================================
         // 3. MAQUINARIA (NO TOCAR)
@@ -50,16 +35,6 @@
                 "icon": "terminal-linux",
                 "isDefault": true
             },
-            
-            // EL PERFIL INFILTRADO QUE LEE LA VARIABLE DE ARRIBA
-            "💻 CMD (Mundo Q:)": {
-                "path": "bash",
-                "args": [
-                    "-c", 
-                    "cmd.exe /k \"Q: && cd $RUTA_WIN_ACTUAL && cls\""
-                ],
-                "icon": "terminal-cmd"
-            }
         },
         
         "terminal.integrated.defaultProfile.linux": "bash",
