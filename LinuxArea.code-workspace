@@ -1,8 +1,8 @@
 {
     "folders": [
         {
-            "name": "📍 ClasesFlacso",
-            "path": "/home/lencina/proyectos/ClasesFlacso"
+            "name": "📍 ClasesGitHub",
+            "path": "/home/lencina/proyectos/CURSO_FLACSO/ClasesGitHub"
         },
     ],
     "settings": {
@@ -14,7 +14,7 @@
         "python.terminal.activateEnvironment": true,
 
         // Ruta al intérprete de tu entorno virtual compartido
-        "python.defaultInterpreterPath": "/home/lencina/proyectos/ClasesFlacso/venv/bin/",
+        "python.defaultInterpreterPath": "/home/lencina/proyectos/CURSO_FLACSO/venv/bin/",
 
         // =================================================================
         // 3. MAQUINARIA (NO TOCAR)
