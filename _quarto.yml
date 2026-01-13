@@ -25,10 +25,10 @@ website:
       - section: "Módulo 1: Fundamentos"
         contents:
           - text: "Introducción"
-            file: clase_01.qmd
+            file: clase_01.ipynb
           - text: "Discretización"
-            file: clase_02.qmd
+            file: clase_02.ipynb
       - section: "Módulo 2: Práctica"
         contents:
-          - text: "Práctico Integrador"
-            file: practico_03.ipynb
+          - text: "Tercera Clase"
+            file: clase_03.ipynb
