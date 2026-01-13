@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="XX">
+<meta name="author" content="Eduardo Lencina">
 
-<title>Curso Python y Pandas - Python para no programadores FLACSO Argentina - CEIA</title>
+<title>Curso Python y Pandas - Clase 01: El título de tu clase</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -94,8 +94,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Buscar"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -194,11 +198,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">En esta página</h2>
+    <h2 id="toc-title">En esta clase</h2>
    
   <ul>
-  <li><a href="#el-escenario-datos-muleto" id="toc-el-escenario-datos-muleto" class="nav-link active" data-scroll-target="#el-escenario-datos-muleto">1. El Escenario: Datos “Muleto”</a></li>
-  <li><a href="#análisis-de-frecuencias" id="toc-análisis-de-frecuencias" class="nav-link" data-scroll-target="#análisis-de-frecuencias">2. Análisis de Frecuencias</a></li>
+  <li><a href="#análisis-de-frecuencias" id="toc-análisis-de-frecuencias" class="nav-link active" data-scroll-target="#análisis-de-frecuencias">2. Análisis de Frecuencias</a></li>
   <li><a href="#cierre" id="toc-cierre" class="nav-link" data-scroll-target="#cierre">3. Cierre</a></li>
   </ul>
 </nav>
@@ -208,8 +211,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Python para no programadores FLACSO Argentina - CEIA</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Código</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Mostrar todo el código</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Ocultar todo el código</a></li></ul></div></div>
-<p class="subtitle lead">Clase 01: Distribuciones de Frecuencia</p>
+<div class="quarto-title-block"><div><h1 class="title">Clase 01: El título de tu clase</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Código</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Mostrar todo el código</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Ocultar todo el código</a></li></ul></div></div>
+<p class="subtitle lead">El subtítulo si tienes</p>
 </div>
 
 
@@ -219,14 +222,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Autor/a</div>
     <div class="quarto-title-meta-contents">
-             <p>XX </p>
+             <p>Eduardo Lencina </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">12 de enero de 2026</p>
+      <p class="date">13 de enero de 2026</p>
     </div>
   </div>
   
@@ -236,35 +239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-```{=html}
-<style>
-  h1, h2, h3, h4 { color: #003366 !important; }
-  a { color: #003366; }
-  .callout-header { background-color: #003366 !important; color: white !important; }
-</style>
-```
-
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-🎯 Objetivos de la Clase
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li>Crear un conjunto de datos (DataFrame) desde cero.</li>
-<li>Calcular frecuencias con <code>value_counts()</code>.</li>
-<li>Generar gráficos de barras básicos.</li>
-</ol>
-</div>
-</div>
-<section id="el-escenario-datos-muleto" class="level2">
-<h2 class="anchored" data-anchor-id="el-escenario-datos-muleto">1. El Escenario: Datos “Muleto”</h2>
-<p>Vamos a simular una encuesta rápida sobre una <strong>Nueva Ley de Educación</strong>.</p>
-<div id="cargar-datos" class="cell">
+<div class="cell" data-execution_count="2">
 <details open="">
 <summary>Código</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -281,9 +256,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(datos)</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div id="cargar-datos" class="cell-output cell-output-display" data-execution_count="2">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">edad</th>
+<th data-quarto-table-cell-role="th">nivel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>23</td>
+<td>Secundario</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>45</td>
+<td>Universitario</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>31</td>
+<td>Universitario</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>22</td>
+<td>Posgrado</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>56</td>
+<td>Secundario</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
 </div>
 <hr>
-</section>
 <section id="análisis-de-frecuencias" class="level2">
 <h2 class="anchored" data-anchor-id="análisis-de-frecuencias">2. Análisis de Frecuencias</h2>
 <p>¿Cuántos encuestados hay por cada nivel educativo?</p>

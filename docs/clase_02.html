@@ -8,7 +8,7 @@
 
 <meta name="author" content="Eduardo Lencina">
 
-<title>Curso Python y Pandas - Clase 02: Discretización de Datos</title>
+<title>Curso Python y Pandas - Clase 02: El título de tu clase</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -96,6 +96,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -194,7 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">En esta página</h2>
+    <h2 id="toc-title">En esta clase</h2>
    
   <ul>
   <li><a href="#el-escenario-edades-de-los-encuestados" id="toc-el-escenario-edades-de-los-encuestados" class="nav-link active" data-scroll-target="#el-escenario-edades-de-los-encuestados">1. El Escenario: Edades de los Encuestados</a></li>
@@ -208,8 +209,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Clase 02: Discretización de Datos</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Código</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Mostrar todo el código</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Ocultar todo el código</a></li></ul></div></div>
-<p class="subtitle lead">Transformando variables numéricas en categóricas</p>
+<div class="quarto-title-block"><div><h1 class="title">Clase 02: El título de tu clase</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Código</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Mostrar todo el código</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Ocultar todo el código</a></li></ul></div></div>
+<p class="subtitle lead">El subtítulo si tienes</p>
 </div>
 
 
@@ -226,7 +227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">12 de enero de 2026</p>
+      <p class="date">13 de enero de 2026</p>
     </div>
   </div>
   
@@ -236,11 +237,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<style>
-  h1, h2, h3, h4 { color: #003366 !important; }
-  a { color: #003366; }
-  .callout-header { background-color: #003366 !important; color: white !important; }
-</style>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -261,7 +257,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="el-escenario-edades-de-los-encuestados" class="level2">
 <h2 class="anchored" data-anchor-id="el-escenario-edades-de-los-encuestados">1. El Escenario: Edades de los Encuestados</h2>
 <p>Seguimos con nuestro proyecto “Muleto”. Esta vez nos enfocaremos exclusivamente en la columna <strong>Edad</strong>. A veces el número exacto no importa tanto como el “Grupo Etario” al que pertenece la persona.</p>
-<div id="cargar-datos-c2" class="cell">
+<div id="cargar-datos-c2" class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <details open="">
 <summary>Código</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -288,7 +284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>Definimos los “bordes” (bins) y las “etiquetas” (labels).</p>
-<div id="aplicar-cut" class="cell">
+<div id="aplicar-cut" class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <details open="">
 <summary>Código</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Definimos los cortes: 0-30, 30-60, 60-100</span></span>
@@ -307,7 +303,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>Ahora que tenemos una variable categórica (<code>grupo_etario</code>), ¡podemos usar lo que aprendimos en la Clase 1!</p>
-<div id="grafico-grupos" class="cell">
+<div id="grafico-grupos" class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <details open="">
 <summary>Código</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Contamos cuántos hay en cada grupo</span></span>

@@ -1,0 +1,13 @@
+/* Mis Colores FLACSO */
+h1, h2, h3, h4 {
+  color: #003366 !important;
+}
+
+a {
+  color: #003366;
+}
+
+.callout-header {
+  background-color: #003366 !important;
+  color: white !important;
+}

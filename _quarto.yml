@@ -2,10 +2,25 @@ project:
   type: website
   output-dir: docs
 
-# Agregamos esto para no re-ejecutar todo siempre
+# --- CONFIGURACIÓN GLOBAL (Esto reemplaza lo que borraste de los ipynb) ---
+lang: es
+author: "Eduardo Lencina"
+
+# --- OPCIONES DE EJECUCIÓN ---
 execute:
   freeze: auto 
 
+# --- FORMATO VISUAL (Aquí vinculamos el CSS y el Tema) ---
+format:
+  html:
+    theme: flatly
+    css: styles.css       # <--- ¡VITAL! Sin esto no se verá azul
+    toc: true             # Tabla de contenidos automática
+    toc-title: "En esta clase"
+    code-fold: show       # Botón para ver código
+    code-tools: true      # Herramientas
+
+# --- ESTRUCTURA DEL SITIO (Tu Sidebar) ---
 website:
   title: "Curso Python y Pandas"
   navbar:
@@ -17,10 +32,9 @@ website:
         text: GitHub
         icon: github
         
-  # AQUÍ ESTÁ EL CAMBIO: Usamos barra lateral
   sidebar:
-    style: "docked" # O "floating"
-    background: light # Fondo grisecito suave
+    style: "docked"
+    background: light 
     contents:
       - section: "Módulo 1: Fundamentos"
         contents:
@@ -31,4 +45,5 @@ website:
       - section: "Módulo 2: Práctica"
         contents:
           - text: "Tercera Clase"
-            file: clase_03.ipynb
+            file: clase_03.ipynb 
+            # (⚠️ OJO: verifica si tu archivo se llama "clase_03.ipynb" o "practico_03.ipynb")
